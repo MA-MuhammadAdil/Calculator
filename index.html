@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Calculator</title>
+    <style> 
+        body {
+            display: flex;
+            justify-content: center;
+            /* align-items: center; */
+            font-size: 20px;
+            background-color: #e3f9ff;
+            height: 100vh;
+            margin: 10px;
+        }
+        #main {
+            border: 2px solid black;
+            width: 400px;
+            max-width: 400px;
+            height: 500px;
+            border-radius: 20px;
+            padding: 10px;
+            background-color: #3a4452;
+            margin-top: 50px;      }
+        #Inp {
+            margin: 10px;
+            width: 90%;
+            border-radius: 15px;
+            height: 80px;
+            border: none;
+            color: white;
+            background-color: transparent;
+            font-size: 2rem;
+            text-align: right;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        button {
+            width: 77px;
+            height: 60px;
+            margin: 7px;
+            border-radius: 10px;
+            box-shadow: -8px -8px 15px rgba(222, 222, 222, 0.3), 5px 5px 15px rgba(0, 0, 0,0.9);
+            background-color: transparent;
+            color: #fff;
+            font-size: 1.5rem;
+            font-weight: bolder;
+        }
+        .dbl {
+            width: 160px;
+        }
+        .colo{
+            color: #33ffd8;
+        }
+        @media screen and (max-width: 768px) {
+            #Inp {
+                font-size: 1.5rem;
+                height: 60px;
+            }
+            button {
+                width: 55px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+            
+        .dbl {
+            width: 120px;
+        }
+        
+        #main {
+            border: 2px solid black;
+            width: 400px;
+            max-width: 300px;
+            height: 400px;
+            border-radius: 20px;
+            padding: 10px;
+            background-color: #3a4452;
+        }
+        }
+        @media screen and (max-width: 480px) {
+            #Inp {
+                font-size: 1.2rem;
+                height: 50px;
+            }
+            button {
+                width: 59px;
+                height: 45px;
+                font-size: 1rem;
+            }
+               
+        .dbl {
+            width: 120px;
+        }
+        
+        #main {
+            border: 2px solid black;
+            width: 400px;
+            max-width: 300px;
+            height: 380px;
+            border-radius: 20px;
+            padding: 10px;
+            background-color: #3a4452;
+        }
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <input type="text" readonly id="Inp">
+        <div class="button-container">
+            <button onclick="
+                
+                display = display.slice(0, -1); document.querySelector('#Inp').value = display";
+                 class="colo">DE</button>
+            <button onclick="
+            
+            display  =   '';
+             document.querySelector('#Inp').value = display" ;
+            
+            class="colo">AC</button>
+            <button onclick="
+            
+            display  = display + '.';
+             document.querySelector('#Inp').value = display";
+
+             class="colo">.</button>
+            <button onclick="
+            
+            display  = display + '/'; 
+            document.querySelector('#Inp').value = display"; 
+            
+            class="colo">/</button>
+
+            <button onclick="
+            
+            display = display + '7'; document.querySelector('#Inp').value = display";>7</button>
+            <button onclick="
+            
+            display = display + '8'; document.querySelector('#Inp').value = display";>8</button>
+            <button onclick="
+            
+            display  = display + '9'; document.querySelector('#Inp').value = display";>9</button>
+            <button onclick="
+            
+            display  = display + '*'; document.querySelector('#Inp').value = display"; class="colo">*</button>
+
+            <button onclick="
+            
+            display  = display + '4'; document.querySelector('#Inp').value = display";>4</button>
+            <button onclick="
+            
+            display  = display + '5'; document.querySelector('#Inp').value = display";>5</button>
+            <button onclick="
+            
+            display  = display + '6'; document.querySelector('#Inp').value = display";>6</button>
+            <button onclick="
+            
+            display  = display + '-'; document.querySelector('#Inp').value = display"; class="colo">-</button>
+
+            <button onclick="
+            
+            display  = display + '1'; document.querySelector('#Inp').value = display";>1</button>
+            <button onclick="
+            
+            display  = display + '2'; document.querySelector('#Inp').value = display";>2</button>
+            <button onclick="
+            
+            display  = display + '3'; document.querySelector('#Inp').value = display";>3</button>
+            <button onclick="
+            
+            display  = display + '+'; document.querySelector('#Inp').value = display"; class="colo">+</button>
+
+            <button onclick="
+            display  = display + '00'; document.querySelector('#Inp').value = display";>00</button>
+            <button onclick="
+            display  = display + '0'; document.querySelector('#Inp').value = display";>0</button>
+            <button class="dbl"   onclick="
+            
+            let result = eval(display)
+            display = result ; 
+document.querySelector('#Inp').value = display 
+            
+            "
+             
+              class="colo">=</button>
+        </div>
+    </div>
+
+    <script>
+        let display = '';
+        document.querySelector('#Inp').value = display;
+    </script>
+</body>
+</html>
